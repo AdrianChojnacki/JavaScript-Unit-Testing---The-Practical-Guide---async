@@ -3,15 +3,17 @@ import { it, expect, beforeAll, beforeEach, afterEach, afterAll } from "vitest";
 import { User } from "./hooks";
 
 const testEmail = "test@test.com";
-const user = new User(testEmail);
+let user = new User(testEmail);
 
 beforeAll(() => {
   console.log("beforeAll()");
 });
 beforeEach(() => {
+  // user = new User(testEmail);
   console.log("beforeEach()");
 });
 afterEach(() => {
+  user = new User(testEmail);
   console.log("afterEach()");
 });
 afterAll(() => {
